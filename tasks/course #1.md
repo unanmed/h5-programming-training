@@ -2,7 +2,7 @@
 
 ## task1 hello, world
 
-输出 `hello, world` 是程序员学习一门新编程语言时会做的第一个操作，现在，你需要使用codelab来进行这一操作，请在右侧编辑器中编写代码，完成后点击下方的 `运行` 按钮。
+输出 `hello world` 是程序员学习一门新编程语言时会做的第一个操作，现在，你需要使用codelab来进行这一操作，请在右侧编辑器中编写代码，完成后点击下方的 `运行` 按钮。
 
 提示：使用 `console.log` 来做输出
 
@@ -15,7 +15,7 @@
 
 ```js judger
 assert(output.length === 1);
-assert(output[0] === "hello, world");
+assert(output[0] === "hello world");
 ```
 
 ## task2 声明一个变量
@@ -54,9 +54,9 @@ assert(res === (typeof input === 'string'));
 
 ## task4 用三元表达式判断表达式是否为真
 
-请用三元表达式判断给出的变量加上5以后是否大于10，将结果用console.log输出
+请用三元表达式判断给出的变量加上5以后是否大于10，将结果用`console.log`输出
 
-如果大于10，输出yes，否则输出no
+如果大于10，输出`yes`，否则输出`no`
 
 变量输入为`input`，可直接使用
 
@@ -76,11 +76,11 @@ assert(output[0] === (input + 5 > 10 ? 'yes' : 'no'));
 ## task5 使用 和 或 非
 
 请判断`input`是否满足以下条件
-- 是数字且平方后大于50
-- 是数字或者是布尔型
-- 非input是false
+- 是`数字`且平方后大于50
+- 是`数字`或者是`布尔型`
+- `非input`是`false`
 
-将结果依次用console.log输出
+将结果依次用`console.log`输出
 
 ```js init
 var a = input;
@@ -95,4 +95,27 @@ assert(output.length === 3);
 assert(output[0] === (typeof input === 'number' && input ** 2 > 50));
 assert(output[1] === (typeof input === 'number' || typeof input === 'boolean'));
 assert(output[2] === !input);
+```
+
+## task6 运算符的使用
+
+请对输入的数字进行一下操作并依次用`console.log`输出
+
+- 乘以5，再减去7，再用3取余
+- 变为5次方，再用7取余，再加上4
+- 除以4，再加上6，设此时变量的值为`x`，求出`x的x次方`
+
+```js init
+var num = input;
+```
+
+```js input
+[2, 5, 23, 53, 22, 64, 12, 42]
+```
+
+```js judger
+assert(output.length === 3);
+assert(output[0] === (input * 5 - 7) % 3);
+assert(output[1] === (input ** 5) % 7 + 4);
+assert(output[2] === (input / 4 + 6) ** (input / 4 + 6));
 ```
