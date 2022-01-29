@@ -94,7 +94,7 @@ var a = input;
 assert(output.length === 3);
 assert(output[0] === (typeof input === 'number' && input ** 2 > 50));
 assert(output[1] === (typeof input === 'number' || typeof input === 'boolean'));
-assert(output[2] === !input);
+assert(output[2] === (!input === false));
 ```
 
 ## task6 运算符的使用
