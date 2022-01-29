@@ -13,7 +13,7 @@ var x = input
 ```js judger
 assert(output.length === 1, '输出数目不对！！');
 if (input > 5) {
-    assert(input + 10 > 20, ' [[input + 10]] 后的第二次判断错误！！');
+    assert(output[0] === input + 10 > 20, ' [[input + 10]] 后的第二次判断错误！！');
 } else assert(output[0] === input, '判断正确，应当执行else内的语句，但输出值与 [[input]] 不同');
 ```
 
