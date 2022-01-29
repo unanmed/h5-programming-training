@@ -92,9 +92,9 @@ var a = input;
 
 ```js judger
 assert(output.length === 3);
-assert(output[0] === (typeof input === 'number' && input ** 2 > 50));
-assert(output[1] === (typeof input === 'number' || typeof input === 'boolean'));
-assert(output[2] === (!input === false));
+assert(output[0] === (typeof input === 'number' && input ** 2 > 50), '第一行判断错误！！');
+assert(output[1] === (typeof input === 'number' || typeof input === 'boolean'), '第二行判断错误！！');
+assert(output[2] === (!input === false), '第三行判断错误！！');
 ```
 
 ## task6 运算符的使用
@@ -115,7 +115,7 @@ var num = input;
 
 ```js judger
 assert(output.length === 3);
-assert(output[0] === (input * 5 - 7) % 3);
-assert(output[1] === (input ** 5) % 7 + 4);
-assert(output[2] === (input / 4 + 6) ** (input / 4 + 6));
+assert(output[0] === (input * 5 - 7) % 3, '第一行计算错误！！');
+assert(output[1] === (input ** 5) % 7 + 4, '第二行计算错误！！');
+assert(output[2] === (input / 4 + 6) ** (input / 4 + 6), '第三行计算错误！！');
 ```
