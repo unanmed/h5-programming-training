@@ -80,8 +80,6 @@ assert(x === output[0] && output.length === 1);
 
 请依次输出满足`0 < x < input`的质数
 
-tips: 判断`x`是否是整数用`Number.isInteger(x)`
-
 ```js init
 var x = input;
 ```
@@ -95,7 +93,7 @@ let arr = [];
 for (let i = 2; i < input; i++) {
     let is = true;
     for (let j = 2; j < i; j++) {
-        if (Number.isInteger(i / j) && i !== j) {
+        if (i % j === 0 && i !== j) {
             is = false;
             break;
         }g
@@ -106,4 +104,49 @@ assert(output.length === arr.length, '输出数量不对！！期望输出数量
 arr.forEach((v, i) => assert(arr[i] === output[i], '第' + (i + 1) + '次输出错误！！！'));
 ```
 
-## task5 
+## task5 数列求和
+
+输入`input`，求出`1 + 11 + 111 + ... + 1...1 （共input项）`，并输出
+
+```js init
+var n = input;
+```
+
+```js input
+[3, 7, 8, 4, 10, 9, 11];
+```
+
+```js judger
+let res = 0;
+for (let i = 0; i < input; i++) {
+    for (let j = 0; j <= i; j++) {
+        res += 10 ** j;
+    }
+}
+assert(output.length === 1, '输出数量不对！！');
+assert(output[0] === res, '计算结果不对！！');
+```
+
+## task6 冰雹猜想
+
+给入一个数N，如果为奇数，则变为`3N+1`，如果是偶数，则变为`N/2`，重复上述步骤，输出N变为1时的计算次数
+
+```js init
+var N = input;
+```
+
+```js input
+[27, 18, 1279, 1208, 12380, 127832];
+```
+
+```js judger
+let now = input;
+let times = 0;
+while (1) {
+    now = now % 2 === 0 ? now / 2 : now * 3 + 1;
+    times++;
+    if (now === 1) break;
+}
+assert(output.length === 1, '输出数量不对！！');
+assert(output[0] === times, '次数计算错误！！');
+```
