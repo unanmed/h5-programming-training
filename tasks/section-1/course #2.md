@@ -92,11 +92,11 @@ var x = input;
 let arr = [];
 for (let i = 2; i < input; i++) {
     let is = true;
-    for (let j = 2; j < i; j++) {
+    for (let j = 2; j <= i; j++) {
         if (i % j === 0 && i !== j) {
             is = false;
             break;
-        }g
+        }
     }
     if (is) arr.push(i);
 }
