@@ -73,3 +73,37 @@ for (let i = 0; i < 10; i++) {
 }
 assert(x === output[0] && output.length === 1);
 ```
+
+## task4 输出质数
+
+只能被1和它本身整除的正整数称为质数（1不是质数）
+
+请依次输出满足`0 < x < input`的质数
+
+tips: 判断`x`是否是整数用`Number.isInteger(x)`
+
+```js init
+var x = input;
+```
+
+```js input
+[62, 643, 907, 356, 147]
+```
+
+```js judger
+let arr = [];
+for (let i = 2; i < input; i++) {
+    let is = true;
+    for (let j = 2; j < i; j++) {
+        if (Number.isInteger(i / j) && i !== j) {
+            is = false;
+            break;
+        }g
+    }
+    if (is) arr.push(i);
+}
+assert(output.length === arr.length, '输出数量不对！！期望输出数量：' + arr.length + '，当前输出数量：' + output.length);
+arr.forEach((v, i) => assert(arr[i] === output[i], '第' + (i + 1) + '次输出错误！！！'));
+```
+
+## task5 
