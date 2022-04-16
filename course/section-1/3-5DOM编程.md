@@ -101,7 +101,7 @@ document.getElementById("a").href = "https://h5mota.com"
 document.getElementById("a").style.color = "#aaa";
 ```
 
-`class` 属性则提供了一个额外的属性 `classList`，这个对象提供了一组操作class列表的方法，你可以用 `contains` 方法判断
+`class` 属性则提供了一个额外的属性 `classList`，这个对象提供了一组操作class列表的方法，你可以用 `contains` 方法判断元素是否具有某个类名，用 `add` 方法添加新的类名，用 `remove` 方法去掉指定的类名，用 `toggle` 方法切换一个类名是否存在
 
 ```html
 <div class="a"></div>
@@ -155,7 +155,7 @@ document.createElement("a"); // <a></a>
 
 ```js
 var b = document.createElement("b");
-document.getElementById("a").appendChild(b); // <div id="a"><b></b><a></a></div>
+document.getElementById("a").appendChild(b); // <div id="a"><a></a><b></b></div>
 ```
 
 这个方法添加的元素会被追加到子节点的末尾，如果想要将元素插入到指定位置，需要使用`insertBefore` 方法
@@ -167,7 +167,7 @@ document.getElementById("a").appendChild(b); // <div id="a"><b></b><a></a></div>
 ```js
 var a = document.querySelector("a");
 var b = document.createElement("b");
-document.getElementById("a").insertBefore(b, a); // <div id="a"><a></a><b></b></div>
+document.getElementById("a").insertBefore(b, a); // <div id="a"><b></b><a></a></div>
 ```
 
 对应的，你可以用 `removeChild` 方法将一个指定的子节点从 dom 树上移除
